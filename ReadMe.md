@@ -1,0 +1,1 @@
+This is a walkthough of the CRUD application for a drinks store. Will update after initializing repo.

@@ -1,0 +1,20 @@
+{
+  "name": "eidas-drinks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts":{
+    "index": "node index.js index",
+    "create": "node index.js create",
+    "show": "node index.js show",
+    "edit": "node index.js edit",
+    "destroy": "node index.js destroy",
+    "cart": "node index.js cart"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^3.3.6"
+  }
+}
