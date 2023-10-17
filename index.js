@@ -1,56 +1,51 @@
 const { readJSONFile, writeJSONFile } = require("./src/helpers");
 
 const { 
-  create, 
-  index, 
-  show, 
-  destroy, 
-  edit,
-  cart 
-} = require("./src/drinksController");
+     create, 
+     index, 
+     show, 
+     destroy, 
+     edit,
+     score 
+} = require("./src/controller");
 
-const drinksCart = readJSONFile("./data", "drinksCart.json");
+const drinks = readJSONFile("./data", "cart.json" )
 
 const inform = console.log;
 
 function run() {
-  const action = process.argv[2];
-  const animal = process.argv[3];
+const action = process.argv[2];
+const item = process.argv[3];
 
-  let writeToFile = false;
-  let drinksCartView = [];
+let writeToFile = false;
+let updatedItem = [];
 
-  switch (action) {
-    case "index":
-      const drinksCart = index(drinksCart);
-      inform(drinksCartView);
-      break;
-    case "create":
-      updatedDrinksCart = create(drinksCart, drink);
-      writeToFile = true;
-      break;
-    case "show":
-      const drinksCart = show(drinksCart, drink)
-      inform(drinksCartView);
-      break;
-    case "edit":
-      updatedDrinksCart = edit(drinksCart, drink, process.argv[4])
-      writeToFile = true;
-      break;
-    case "destroy":
-      updatedDrinksCart = destroy(drinksCart, drink)
-      writeToFile = true;
-      break;
-    case "cart":
-      inform(`Current total sum of all items you've added to your cart:`, score(drinks));
-      break;
-    default:
-      inform("There was an error.");
-  }
-
-  if (writeToFile) {
-    writeJSONFile("./data", "drinksCart.json", updatedDrinksCart);
-  }
+switch (action) {
+     case "index":
+     inform(action, item);
+     break;
+case "create":
+     updatedItem = create(action, item);
+     writeToFile = true;
+     break;
+case "show":
+     inform(action, item);
+     break;
+case "edit":
+     inform(action, item);
+     break;
+case "destroy":
+     inform(action, item);
+     break;
+case 'score':
+     inform(action);
+     break;
+default:
+     inform('There was an error.');
+}
+if (writeToFile) {
+     writeJSONFile("./data", "cart.json", updatedItem);
+}
 }
 
 run();
