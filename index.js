@@ -22,23 +22,25 @@ let updatedItem = [];
 
 switch (action) {
      case "index":
-     inform(action, item);
+     index(drinks);
      break;
 case "create":
-     updatedItem = create(action, item);
+     updatedItem = create(drinks, item);
      writeToFile = true;
      break;
 case "show":
-     inform(action, item);
+     inform(drinks, item);
      break;
 case "edit":
-     inform(action, item);
+     inform(drinks, item);
+     writeToFile = true;
      break;
 case "destroy":
-     inform(action, item);
+     inform(drinks, item);
+     writeToFile = true;
      break;
 case 'score':
-     inform(action);
+     score(drinks);
      break;
 default:
      inform('There was an error.');
